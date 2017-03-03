@@ -13,7 +13,7 @@ is null.
 
 ## Dependencies
 
-    http = 
+    http =
       http: require 'http'
       https: require 'https'
     url = require 'url'
@@ -42,6 +42,7 @@ var connection = new hbase.Connection( client );
 
     Connection::makeRequest = (method, command, data, callback) ->
       options =
+        agent: @client.options.agent
         protocol: "#{@client.options.protocol}:"
         port: @client.options.port
         hostname: @client.options.host
